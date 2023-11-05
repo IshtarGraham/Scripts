@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<SCRIPT TYPE="text/javascript">
+<!--
+function updateExample(lang, example)
+{
+	var startText;
+	var div = document.getElementById(lang + "Example");
+	var font = document.getElementById(lang + "Fonts");
+	var size = document.getElementById(lang + "Heights");
+	
+	if (font.selectedIndex <= 0)
+	{
+		startText = '<span class="' + lang + 'font">';
+		size.disabled = true;
+	}
+	else
+	{
+		startText = '<span style="font-family:' + font.value + ';font-size:' +  size.value + '">';
+		size.disabled = false;
+	}
+	
+	div.innerHTML = startText + example + '</span>';
+}
+
+function updateExamples()
+{
+	updateExample("arabic", "&#x0634;&#x064e;&#x0645;&#x0652;&#x0633;");
+	updateExample("hebrew", "&#x05e9;&#x05b6;&#x05de;&#x05b6;&#x05e9;");
+	updateExample("syriac", "&#1835;&#1846;&#1825;&#1835;&#1843;&#1808;");
+}
+
+function loadFonts(fontArabic, heightArabic, fontHebrew, heightHebrew, fontSyriac, heightSyriac)
+{
+	var fontHelper = document.getElementById("dlgHelper");
+	var i, j;
+	var myOption;
+	var fontCount = fontHelper.fonts.Count;
+	var fonts = new Array();
+	var selectFontIds = new Array();
+	var selectHeightIds = new Array();
+	var currentFonts = new Array();
+	var currentHeights = new Array();
+	var fontSelect;
+	var done;
+
+	selectFontIds[0] = document.getElementById("arabicFonts");
+	selectFontIds[1] = document.getElementById("hebrewFonts");
+	selectFontIds[2] = document.getElementById("syriacFonts");
+	selectHeightIds[0] = document.getElementById("arabicHeights");
+	selectHeightIds[1] = document.getElementById("hebrewHeights");
+	selectHeightIds[2] = document.getElementById("syriacHeights");
+	currentFonts[0] = fontArabic;
+	currentFonts[1] = fontHebrew;
+	currentFonts[2] = fontSyriac;
+	currentHeights[0] = heightArabic;
+	currentHeights[1] = heightHebrew;
+	currentHeights[2] = heightSyriac;
+	
+	for (i = 0; i < fontCount; i++)
+	{
+		fonts[i] = fontHelper.fonts(i + 1);
+	}
+	
+	fonts.sort();
+	
+	for (j = 0; j < 3; j++)
+	{
+		fontSelect = selectFontIds[j];
+		done = false;
+		
+		for (i = 0; i < fontCount; i++)
+		{
+			myOption = document.createElement("option");
+			myOption.text = fonts[i];
+			myOption.value = fonts[i];
+			
+			fontSelect.add(myOption);
+			
+			if (myOption.text == currentFonts[j])
+			{
+				fontSelect.selectedIndex = fontSelect.length - 1;
+				done = true;
+			}
+		}
+		if (!done)
+		{
+			fontSelect.selectedIndex = 0;
+		}
+
+		fontSelect = selectHeightIds[j];
+		done = false;
+		
+		for (i = 100; i <= 250; i += 10)
+		{
+			myOption = document.createElement("option");
+			myOption.text = i.toString() + "%";
+			myOption.value = myOption.text;
+			
+			fontSelect.add(myOption);
+			
+			if (myOption.text == currentHeights[j])
+			{
+				fontSelect.selectedIndex = fontSelect.length - 1;
+				done = true;
+			}
+		}
+		if (!done)
+		{
+			fontSelect.selectedIndex = 0;
+		}
+	}
+	
+	updateExamples();
+}
+
+//-->
+</SCRIPT>
+<title>Configuration</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel=StyleSheet HREF="../style.css" TYPE="text/css" MEDIA=all>
+</head>
+
+<body onLoad="loadFonts('','','','','','')">
+<center><h2>Configuration</h2></center>
+<OBJECT id="dlgHelper" CLASSID="clsid:3050f819-98b5-11cf-bb82-00aa00bdce0b" width="0" height="0"></OBJECT>
+<form action="doconfig.php" method="post">
+<br><br>
+<table border="0">
+  <tr valign="bottom"><td>
+Police arabe :</td><td><select id="arabicFonts" name="arabicFonts" onChange="updateExamples()">
+<option value="">
+&lt;Défaut&gt;</option>
+</select></td><td>
+Hauteur :</td><td><select id="arabicHeights" name="arabicHeights" onChange="updateExamples()"></select></td>
+<td>&nbsp;&nbsp;<div id="arabicExample"></div></td>
+</tr><tr valign="bottom"><td>
+Police hébraïque :</td><td><select id="hebrewFonts" name="hebrewFonts" onChange="updateExamples()">
+<option value="">
+&lt;Défaut&gt;</option>
+</select></td><td>
+Hauteur :</td><td><select id="hebrewHeights" name="hebrewHeights" onChange="updateExamples()"></select></td>
+<td>&nbsp;&nbsp;<div id="hebrewExample"></div></td>
+</tr><tr valign="bottom"><td>
+Police syriaque :</td><td><select id="syriacFonts" name="syriacFonts" onChange="updateExamples()">
+<option value="">
+&lt;Défaut&gt;</option>
+</select></td><td>
+Hauteur :</td><td><select id="syriacHeights" name="syriacHeights" onChange="updateExamples()"></select></td>
+<td>&nbsp;&nbsp;<div id="syriacExample"></div></td>
+</tr>
+<tr>
+<td colspan="4" align="center">
+<br><br>
+<input type="submit" value="Appliquer" name="search">
+</td></tr>
+</table>
+</form>
+<br><br>
+<a href="index_fr.php">Retour au menu principal</a></body>
+</html>

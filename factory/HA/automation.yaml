@@ -1,0 +1,9 @@
+- id: '9876543210'
+  alias: 'Turn on Living Room Light on HTTP Request'
+  trigger:
+    platform: webhook
+    webhook_id: living_room_light_trigger
+  action:
+    service: light.turn_on
+    entity_id: light.living_room_light
+

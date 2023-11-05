@@ -1,0 +1,71 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Utilisation du dictionnaire</title>
+<meta http-equiv="Content-Language" content="fr">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel=StyleSheet HREF="../style.css" TYPE="text/css" MEDIA=all>
+</head>
+
+<body>
+<center><h2>Utilisation du dictionnaire</h2></center>
+<h3>Recherche</h3>
+<h4>Syntaxe</h4>
+<p>La recherche dans le dictionnaire peut s'effectuer à partir d'un mot entier ou d'une partie d'un mot. Dans ce dernier cas, la partie manquante est remplacée par une astérisque <strong>*</strong>. Par exemple, <strong>re*</strong> permet de rechercher tous les mots commençant par &quot;re&quot;. Cette fonction
+    est particulièrement utile pour retrouver des mots dont une partie est manquante
+    à la suite d'une cassure de la tablette. Par exemple, <b>*catu</b> permet de rechercher
+    tous les mots se terminant par "&scaron;atu".</p>
+<p>La recherche peut s'effectuer sur les mots akkadiens, mais aussi sur les mots français ou anglais contenus dans les rubriques du dictionnaire. Ceci permet d'effectuer des recherches &quot;inversées&quot; français / anglais &rarr; akkadien.
+Les recherches en français ou en anglais sont effectuées sur les parties de mot. Par exemple, la recherche du mot <b>chercher</b> retournera les mos contenant <b>rechercher</b>.
+Pour chercher seulement des mots entiers, il faut placer le mot-clé entre guillemets.
+</p>
+<p>Pour rechercher un mot akkadien, la syntaxe suivante doit être utilisée :</p>
+<ul>
+  <li>la lettre <strong>&#x1e2b;</strong> est remplacée par <strong>h</strong></li>
+  <li>la lettre <strong>&scaron;</strong> (shin) est remplacée par <strong>sz</strong> ou <strong>c</strong></li>
+  <li>la lettre <strong>&#x1e63;</strong> (sadhe) est remplacée par <strong>s,</strong></li>
+  <li>la lettre <strong>&#x1e6d;</strong> (teth) est remplacée par <strong>t,</strong></li>
+  <li>l'aleph <strong>&#x02be;</strong> est remplacée par <strong>'</strong> (apostrophe)</li>
+  <li>la lettre <strong>y</strong> est utilisée à la place de <strong>j</strong></li>
+  <li>la longueur des voyelles n'est pas marquée</li>
+  <li>la mimation n'est pas indiquée</li>
+</ul>
+<p>Par exemple, pour rechercher le mot akkadien <strong>&scaron;â&#x1e6d;u</strong>, on exécutera la recherche avec la clé <strong>szat,u</strong> ou <strong>cat,u</strong>.</p>
+<p>Le choix d'une catégorie permet de restreindre la recherche à un domaine sémantique plus précis, en particulier lorsque l'on exécute une recherche sur une partie de mot.</p>
+<h4>Dialectes</h4>
+<p>Les mots akkadiens sont normalement enregistrés avec l'orthographe du paléo-babylonien dont la mimation est omise, mais il existe en général un lien à partir de l'orthographe du babylonien standard. Par exemple, l'entrée principale <strong>&#x1e6d;i&#x0101;bu</strong> est croisée avec l'entrée secondaire <strong>&#x1e6d;âbu</strong>.</p>
+<p>Si un mot n'est pas attesté en paléo-babylonien, il est enregistré dans le dialecte où il est attesté.</p>
+<h4>Verbes</h4>
+<p>Les verbes sont accessibles par leur infinitif à la forme G ; les formes dérivées sont définies dans la même rubrique. Si un verbe n'est pas attesté à la forme G, il est accessible par son infinitif dans sa forme attestée (par exemple <strong>kullu</strong>).</p>
+<p>Les verbes quadrilatères sont accessibles par leur infinitif à la forme N (par exemple <strong>nabalkutu</strong>).</p>
+<h4>Idéogrammes</h4>
+<p>Il est possible de rechercher des mots dans le dictionnaire à partir de leur écriture idéographique. Les idéogrammes doivent être entrés avec des indices et la lettre <b>&Scaron;</b> doit être remplacée par <b>SZ</b> ou <b>C</b>. Par exemple <b>&Uacute;&Scaron;</b> sera entré <b>USZ2</b> ou <b>UC2</b>.</p>
+<p>Les idéogrammes sont séparés par un point. Il est possible d'utiliser le caractère <b>?</b> pour indiquer un signe quelconque, et le caractère <b>*</b> pour indiquer un ou plusieurs signes quelconques. Par exemple, <b>MUNUS.*</b> va rechercher les mots dont l'écriture idéographique commence par le signe <b>MUNUS</b>.
+    Cette fonctionnalité peut être très utile pour retrouver un mot dont le début est
+    manquant : la recherche <b>?.GAL</b> permet de trouver tous les mots dont le premier signe est
+    inconnu et le deuxième signe est <b>GAL</b>.</p>
+    <p>
+        La recherche s'effectue sur la forme du signe et non sur sa lecture (sumérienne). Ainsi, une
+        recherche avec <b>MUNUS</b>, <b>MI2</b> ou <b>SAL</b> donnera le même résultat car ces idéogrammes correspondent
+        au même signe. De plus, les signes composés sont pris
+        en compte
+        : la recherche <b>MUNUS.*</b> retourne entre autres <b>EME<sub>3</sub></b> car ce
+        signe s'écrit <b>MUNUS+AN&Scaron;E.</b></p>
+<p>
+Les déterminatifs peuvent être omis, même s'ils font partie de l'écriture normale. Par exemple, la recherche avec la clé <b>TUKUL</b>
+retournera le mot akkadien <b>kakku</b> car son écriture idéographique est <b>GI&Scaron;.TUKUL</b> où <b>GI&Scaron;</b> est un déterminatif.
+</p>
+<h3>Configuration de l'affichage</h3>
+<p>Cette commande permet de configurer les polices de caractères utilisées pour afficher les mots dans les langues suivantes :</p>
+<ul>
+  <li>arabe,</li>
+  <li>hébreu,</li>
+  <li>syriaque.</li>
+</ul>
+<p>Lorsqu'une police de caractères n'est pas configurée, une police par défaut est utilisée qui est normalement présente sur la plupart des systèmes.</p>
+<p>Si la police par défaut ne convient pas, il est possible d'en choisir une autre dans une liste, ainsi que sa taille (cette fonctionnalité n'est disponible actuellement qu'avec Internet Explorer). </p>
+<p>Pour afficher les transcriptions en caractères latins, une police de caractères suffisamment riche doit être installée sur le système pour être en mesure de voir les caractères en usage en assyriologie. Le dictionnaire utilise par défaut la police &quot;Arial Unicode MS&quot; ou la police &quot;Code 2000&quot; si la première n'est pas présente. La police Code 2000 peut être téléchargée <a href="http://www.code2000.net/">ici</a>.</p>
+<br>
+<a href="index.php">Retour au menu principal</a>
+</body>
+</html>

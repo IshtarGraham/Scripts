@@ -1,0 +1,78 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Using the dictionary</title>
+<meta http-equiv="Content-Language" content="en">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel=StyleSheet HREF="../style.css" TYPE="text/css" MEDIA=all>
+</head>
+
+<body>
+<center><h2>Using the dictionary</h2></center>
+<h3>Searching</h3>
+<h4>Syntax</h4>
+<p>Searching in the dictionary can be done from a whole word or a part of a word. In the latter case, the missing part should be replaced by the character <strong>*</strong>. For example, <strong>re*</strong> will match all the words beginning with &quot;re&quot;. This function is especially
+    useful to find words for which a part is missing because of a break in
+    the tablet. For example, <b>*catu</b> will match all words ending in "&scaron;atu".</p>
+<p>Searching can be made on Akkadian words, but also on French and English words contained in the entries of the dictionary. This feature can be used to realize &quot;reverse&quot; searches French / English &rarr; Akkadian.
+English and French searches are done on part of words. For example, using the key <b>chercher</b> in a French search will return words containing <b>rechercher</b>.
+In order to search only full words, put the search word between quotes.
+</p>
+<p>In order to look up an Akkadian word, the following syntax must be respected :</p>
+<ul>
+  <li>the character <strong>&#x1e2b;</strong> is replaced by <strong>h</strong></li>
+  <li>the character <strong>&scaron;</strong> (shin) is replaced by <strong>sz</strong> or <strong>c</strong></li>
+  <li>the character <strong>&#x1e63;</strong> (sadhe) is replaced by <strong>s,</strong></li>
+  <li>the character <strong>&#x1e6d;</strong> (teth) is replaced by <strong>t,</strong></li>
+  <li>the aleph <strong>&#x02be;</strong> is replaced by <strong>'</strong> (apostrophe)</li>
+  <li>the character <strong>y</strong> is used instead of <strong>j</strong></li>
+  <li>the vowel length is not expressed</li>
+  <li>mimation is omitted </li>
+</ul>
+<p>For example, in order to search the Akkadian word <strong>&scaron;â&#x1e6d;u</strong>, the key <strong>szat,u</strong> or <strong>cat,u</strong> should be used.</p>
+<p>Choosing a category can be used to limit the search to a restricted semantic field, especially when searching from a part of a word.</p>
+<h4>Dialects</h4>
+<p>Akkadian words are normally stored with the Old-Babylonian spelling whose mimation has been omitted, but a link from the Standard Babylonian spelling is generally present. For example, the main entry <strong>&#x1e6d;i&#x0101;bu</strong> can be reached from a secondary entry <strong>&#x1e6d;âbu</strong>.</p>
+<p>If a word is not attested in Old-Babylonian, it is stored in the dialect in which it is attested.</p>
+<h4>Verbs</h4>
+<p>Verbs are indexed by their infinitive in the G stem ; the other stems are defined in the same entry. When a verb is not attested in the G stem, it is indexed by its infinitive in the attested stem (for example <strong>kullu</strong>).</p>
+<p>Quadriliteral verbs are indexed by their infinitive in the N stem (for example <strong>nabalkutu</strong>).</p>
+    <h4>
+        Ideograms</h4>
+    <p>
+        It is possible to look for words in the dictionary by means of their ideographic spelling.
+        Ideograms should be entered with indices, and the character
+        <b>&Scaron;</b> should be replaced by <b>SZ</b> or <b>C</b>. For example <b>&Uacute;&Scaron;</b> should
+        be entered as <b>USZ2</b> or <b>UC2</b>.</p>
+    <p>
+        Ideograms are separated by a dot. It is possible to use the character
+        <b>?</b> in order to replace any sign, and the character <b>*</b> to replace
+        one or several unspecified signs. For example, <b>MUNUS.*</b> can be used to look for
+        words whose ideographic spelling starts with the sign <b>MUNUS</b>. This functionality
+        can be especially useful to find a word whose beginning is missing: searching with
+        <b>?.GAL</b> will find all the words whose first sign is unknown and
+        the second sign is <b>GAL</b>.</p>
+    <p>
+        Ideographic searching is done according to the shape of the sign and not according to its (Sumerian) reading. Thus, searching
+        with <b>MUNUS</b>, <b>MI2</b> or <b>SAL</b> will return the same result since
+        they correspond to the same sign. Moreover, composite signs are taken
+        into account: searching with <b>MUNUS.*</b> returns amongst other words <b>EME<sub>3</sub></b>
+        since this sign is written <b>MUNUS+AN&Scaron;E.</b></p>
+<p>
+Determinatives can be omitted even if they are part of the normal writing. For example, searching with <b>TUKUL</b> will return the Akkadian word <b>kakku</b> since its ideographic writing is
+<b>GI&Scaron;.TUKUL</b> where <b>GI&Scaron;</b> is a determinative.
+</p>
+<h3>Display configuration</h3>
+<p>This command is used to configurate the fonts used to display words in the following languages :</p>
+<ul>
+  <li>Arabic,</li>
+  <li>Hebrew,</li>
+  <li>Syriac.</li>
+</ul>
+<p>When a font is not configurated, a default font is used which should be present on most systems.</p>
+<p>If the default font does not fit, it is possible to select another font in a list, along with its size (this option is only available with Internet Explorer). </p>
+<p>In order to correctly display transcriptions with latin characters, a rich enough font must be installed on the system so that characters used in Assyriology can be displayed. The dictionary uses by default the fonts &quot;Arial Unicode MS&quot;, or &quot;Code 2000&quot; if the first one is not present. Code 2000 can be downloaded <a href="http://www.code2000.net/">here</a>.</p>
+<br>
+<a href="index.php">Back to dictionary main menu</a>
+</body>
+</html>
